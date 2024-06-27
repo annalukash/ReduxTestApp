@@ -12,7 +12,7 @@ const Button = ({title, onPress, disabled}: IProps) => {
     return (
         <TouchableOpacity
             onPress={onPress}
-            style={styles.container}
+            style={{ ...styles.container, backgroundColor: disabled ? Colors.yellowOpacity : Colors.yellow }}
             disabled={disabled}>
             <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>

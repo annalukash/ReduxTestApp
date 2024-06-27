@@ -6,4 +6,5 @@ export const enterUserCredentials = (
 ): void => {
     state.username = action.payload.username;
     state.password = action.payload.password;
+    state.loginError = action.payload.loginError;
 };

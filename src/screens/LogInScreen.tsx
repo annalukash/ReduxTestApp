@@ -40,11 +40,17 @@ const LogInScreen = ({navigation}: Props) => {
     }, [isLoggedIn]);
 
     const onEnterEmail = (value: string): void => {
-        dispatch(enterUserCredentialsAction({...loginState, username: value}));
+        dispatch(
+            enterUserCredentialsAction({
+                ...loginState,
+                username: value,
+                loginError: '',
+            }),
+        );
     };
 
     const onEnterPassword = (value: string) => {
-        dispatch(enterUserCredentialsAction({...loginState, password: value}));
+        dispatch(enterUserCredentialsAction({...loginState, password: value, loginError: ''}));
     };
 
     const onSubmitLogin = async (): Promise<void> => {
@@ -84,7 +90,7 @@ const LogInScreen = ({navigation}: Props) => {
                     <Button
                         title={'Login'}
                         onPress={onSubmitLogin}
-                        disabled={!username && !password}
+                        disabled={!username || !password}
                     />
                 </View>
                 {loading && <Loader />}

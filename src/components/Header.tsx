@@ -1,7 +1,7 @@
-import React, {PropsWithChildren} from "react";
-import {View, StyleSheet} from "react-native";
-import {useSafeAreaInsets} from "react-native-safe-area-context";
-import Colors from "../theme/colors.ts";
+import React, {PropsWithChildren} from 'react';
+import {View, StyleSheet} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import Colors from '../theme/colors.ts';
 
 const Header = (props: PropsWithChildren) => {
     const insets = useSafeAreaInsets();
@@ -10,9 +10,7 @@ const Header = (props: PropsWithChildren) => {
         <View>
             <View style={styles.circle1} />
             <View style={styles.circle2} />
-            <View style={{ marginTop: insets.top }}>
-                {props.children}
-            </View>
+            <View style={{marginTop: insets.top + 20}}>{props.children}</View>
         </View>
     );
 };
@@ -36,6 +34,6 @@ const styles = StyleSheet.create({
         top: -175,
         left: 207,
     },
-})
+});
 
 export default Header;

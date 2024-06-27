@@ -1,6 +1,6 @@
-import React from "react";
-import {TextInput, StyleSheet} from "react-native";
-import Colors from "../theme/colors.ts";
+import React from 'react';
+import {TextInput, StyleSheet} from 'react-native';
+import Colors from '../theme/colors.ts';
 
 interface IProps {
     placeholder: string;
@@ -9,7 +9,7 @@ interface IProps {
     secureTextEntry?: boolean;
 }
 
-const Input = ({ onChangeText, value, placeholder, secureTextEntry }: IProps) => {
+const Input = ({onChangeText, value, placeholder, secureTextEntry}: IProps) => {
     return (
         <TextInput
             value={value}
@@ -19,6 +19,7 @@ const Input = ({ onChangeText, value, placeholder, secureTextEntry }: IProps) =>
             selectionColor={Colors.yellow}
             placeholderTextColor={Colors.grey}
             secureTextEntry={secureTextEntry}
+            autoCapitalize={'none'}
         />
     );
 };
@@ -31,6 +32,6 @@ const styles = StyleSheet.create({
         padding: 16,
         borderColor: Colors.grey,
     },
-})
+});
 
 export default Input;

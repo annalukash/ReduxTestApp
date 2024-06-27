@@ -5,4 +5,4 @@ export default {
     black: '#000000',
     blackOpacity: 'rgba(0, 0, 0, 0.5)',
     red: '#FF0000',
-}
+};

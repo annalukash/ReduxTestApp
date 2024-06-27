@@ -1,6 +1,6 @@
-import React from "react";
-import {TouchableOpacity, Text, StyleSheet} from "react-native";
-import Colors from "../theme/colors.ts";
+import React from 'react';
+import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import Colors from '../theme/colors.ts';
 
 interface IProps {
     title: string;
@@ -8,9 +8,12 @@ interface IProps {
     disabled?: boolean;
 }
 
-const Button = ({ title, onPress, disabled }: IProps) => {
+const Button = ({title, onPress, disabled}: IProps) => {
     return (
-        <TouchableOpacity onPress={onPress} style={styles.container} disabled={disabled}>
+        <TouchableOpacity
+            onPress={onPress}
+            style={styles.container}
+            disabled={disabled}>
             <Text style={styles.text}>{title}</Text>
         </TouchableOpacity>
     );
@@ -29,6 +32,6 @@ const styles = StyleSheet.create({
         color: Colors.black,
         fontWeight: '400',
     },
-})
+});
 
 export default Button;
